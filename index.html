@@ -1,24 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
-			<style>
-				.swatch {
-					width: 100px;
-					height: 100px;
-				}
-			
-				.swatch {
-					/* Remove this rule when you set your colors! */
-					background-color: red;
-					margin: 1px;
-				}
-			
-				main {
-					width: 600px;
-					margin: auto;
-				}
-			</style>
+		<title>Colors.Fun</title>
+		<link rel="stylesheet" type="text/css" href="./styles.css"></link>
 	</head>
 	<body>
 
@@ -126,7 +110,7 @@
 							<textarea></textarea>
 						</label>
 
-						<label>
+						<label class="mt-2">
 							Sign up for the newsletter
 							<input type="checkbox">
 						</label>
@@ -163,24 +147,28 @@
 		</main>
 
 		<script>
-			
+			const color1 = [228, 22, 228]
+			const color2 = [0, 221, 255]
+			const incrementR = Math.abs(color1[0] - color2[0]) / 100;
+			const incrementG = Math.abs(color1[1] - color2[1]) / 100;
+			const incrementB = Math.abs(color1[2] - color2[2]) / 100;
 
-			// All 100 color swatches has a CSS custom property assigne to it. 
-			// You can use this color each swatch with a unique color. 
-
-			// --color-sample-0 : red
-			// --color-sample-1 : green
-			// ...
-			// --color-sample-99 : blue
-
-			// make some swatches 
 			const swatchCount = 100
 			for (let i = 0; i < swatchCount; i += 1) {
+				const r = (color1[0] > color2[0] ? color1[0] - (incrementR * i) : color1[0] + (incrementR * i)).toFixed(0)
+				const g = (color1[1] > color2[1] ? color1[1] - (incrementG * i) : color1[1] + (incrementG * i)).toFixed(0)
+				const b = (color1[2] > color2[2] ? color1[2] - (incrementB * i) : color1[2] + (incrementB * i)).toFixed(0)
 				const swatch = `
 				<div 
 					class="swatch add-to-cart color-${i}" 
-					data-color="Color ${i}" 
-					data-price="${(Math.random() * 10).toFixed(2)}"></div>`
+					data-color="Color rgba(${r + ", " + g + ", " + b})" 
+					data-price="${(Math.random() * 10).toFixed(2)}"
+					style="background-color: rgba(
+						${r},
+						${g},
+						${b},
+					1)"
+					></div>`
 				document.querySelector('.swatches').innerHTML += swatch
 			}
 
@@ -265,7 +253,7 @@
         let str = ''
         for (let i = 0; i < cart.length; i += 1) {
 					// Shopping cart list item! 
-          str += `<li>
+          str += `<li class="cart-item">
             <span>
 							<span>${cart[i].name}</span>
 							<span>${cart[i].price}</span> 
@@ -275,7 +263,7 @@
 							<span>${(cart[i].qty * cart[i].price).toFixed(2)}</span>
 						</span>
             
-						<span>
+						<span class="cart-actions">
 							<input class="update" data-name="${cart[i].name}" type="number" value="${cart[i].qty}">
 							<button class="add-one" data-name="${cart[i].name}"> + </button>
 							<button class="remove-one" data-name="${cart[i].name}"> - </button>

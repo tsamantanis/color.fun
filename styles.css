@@ -1,0 +1,162 @@
+body, html, main {
+    margin: 0;
+    font-family: 'VT323', monospace;
+    background: #F9EFE4;
+    
+}
+
+html {
+    overflow-x: hidden;
+}
+
+main {
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #F9EFE4;
+}
+
+.content {
+    font-size: 1.2rem;
+    max-width: 700px;
+    border: 7px double #000;
+    padding: 2rem;
+}
+
+code, a, button, h1, h2, h3, h4, h5, h6, span, p, small {
+    font-family: 'VT323', monospace;
+}
+
+main {
+    width: 600px;
+    margin: auto;
+}
+
+#about, #popular, #swatches, #contact {
+    min-height: 100vh;
+}
+
+#banner, #cart {
+    min-height: 25vh;
+}
+
+#nav {
+    position: sticky;
+    top: 0;
+    background: #F9EFE4;
+}
+
+#nav header {
+    width: 100vw;
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.6);
+}
+
+#nav header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+
+.card {
+    border: 2px solid black;
+    padding: 1rem;
+    display: flex; 
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card img {
+    max-height: 150px;
+    width: auto;
+}
+
+.card p {
+    margin-left: 2rem;
+    color: #53564D;
+}
+
+.swatches {
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+}
+
+.swatch {
+    width: 50px;
+    height: 50px;
+}
+
+
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.cart-actions {
+    margin-top: 1rem;
+}
+
+input, textarea {
+    border: 2px double black;
+    border-radius: 0;
+    min-height: 35px;
+    padding-left: 1rem;
+    background: #F9EFE4;
+}
+
+button {
+    text-decoration: none;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #000;
+    border-right: 2px solid #000;
+    min-height: 35px;
+    min-width: 35px;
+    background: #F9EFE4;
+}
+
+#about {
+    min-height: 70vh;
+}
+
+#total {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#contact {
+    border: 4px double black;
+    padding: 2rem;
+    width: 100%;
+    min-height: 70vh;
+}
+
+#contact form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+#contact input[type="checkbox"] {
+    margin-top: -1rem;
+    min-height: 20px;
+}
+
+#contact input[type="radio"] {
+    margin-bottom: -1.5rem;
+    margin-left: -2.5rem;
+    min-height: 20px;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
